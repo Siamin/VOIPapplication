@@ -41,7 +41,7 @@ import org.linphone.LinphoneManager;
 import org.linphone.R;
 import org.linphone.activities.AboutActivity;
 import org.linphone.activities.MainActivity;
-import org.linphone.assistant.MenuAssistantActivity;
+import org.linphone.assistant.GenericConnectionAssistantActivity;
 import org.linphone.core.Core;
 import org.linphone.core.ProxyConfig;
 import org.linphone.core.RegistrationState;
@@ -120,7 +120,7 @@ public class SideMenuFragment extends Fragment {
                                         new Intent()
                                                 .setClass(
                                                         getActivity(),
-                                                        MenuAssistantActivity.class));
+                                                        GenericConnectionAssistantActivity.class));
                                 getActivity().finish();
                             }
                         } else if (selectedItem.equals(getString(R.string.menu_settings))) {
@@ -128,7 +128,10 @@ public class SideMenuFragment extends Fragment {
                         } else if (selectedItem.equals(getString(R.string.menu_about))) {
                             startActivity(new Intent(getActivity(), AboutActivity.class));
                         } else if (selectedItem.equals(getString(R.string.menu_assistant))) {
-                            startActivity(new Intent(getActivity(), MenuAssistantActivity.class));
+                            startActivity(
+                                    new Intent(
+                                            getActivity(),
+                                            GenericConnectionAssistantActivity.class));
                         } else if (selectedItem.equals(getString(R.string.menu_recordings))) {
                             startActivity(new Intent(getActivity(), RecordingsActivity.class));
                         }

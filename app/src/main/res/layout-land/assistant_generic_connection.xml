@@ -111,6 +111,7 @@
                     android:layout_columnWeight="1"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <TextView
@@ -128,6 +129,7 @@
                         android:contentDescription="@string/content_description_domain_field"
                         android:inputType="textUri"
                         android:maxLines="1"
+                        android:text="@string/domainAddres"
                         android:hint="@string/domain"
                         android:textColor="@color/black_color" />
 
@@ -167,6 +169,7 @@
                     android:layout_columnWeight="1"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <TextView
@@ -188,6 +191,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
+                            android:checked="true"
                             android:textColor="?attr/primaryTextColor"
                             android:text="@string/pref_transport_udp" />
 
@@ -205,7 +209,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:textColor="?attr/primaryTextColor"
-                            android:checked="true"
                             android:text="@string/pref_transport_tls" />
 
                     </RadioGroup>
