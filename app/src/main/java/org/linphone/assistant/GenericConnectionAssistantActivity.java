@@ -79,17 +79,17 @@ public class GenericConnectionAssistantActivity extends AssistantActivity implem
         accountCreator.setPassword(mPassword.getText().toString());
         accountCreator.setDisplayName(mDisplayName.getText().toString());
 
-        switch (mTransport.getCheckedRadioButtonId()) {
-            case R.id.transport_udp:
-                accountCreator.setTransport(TransportType.Udp);
-                break;
-            case R.id.transport_tcp:
-                accountCreator.setTransport(TransportType.Tcp);
-                break;
-            case R.id.transport_tls:
-                accountCreator.setTransport(TransportType.Tls);
-                break;
-        }
+        //        switch (mTransport.getCheckedRadioButtonId()) {
+        //            case R.id.transport_udp:
+        accountCreator.setTransport(TransportType.Udp);
+        //                break;
+        //            case R.id.transport_tcp:
+        //                accountCreator.setTransport(TransportType.Tcp);
+        //                break;
+        //            case R.id.transport_tls:
+        //                accountCreator.setTransport(TransportType.Tls);
+        //                break;
+        //        }
 
         createProxyConfigAndLeaveAssistant(true);
     }

@@ -40,14 +40,12 @@ import org.linphone.LinphoneContext;
 import org.linphone.LinphoneManager;
 import org.linphone.R;
 import org.linphone.activities.AboutActivity;
-import org.linphone.activities.MainActivity;
 import org.linphone.assistant.GenericConnectionAssistantActivity;
 import org.linphone.core.Core;
 import org.linphone.core.ProxyConfig;
 import org.linphone.core.RegistrationState;
 import org.linphone.core.tools.Log;
 import org.linphone.recording.RecordingsActivity;
-import org.linphone.settings.LinphonePreferences;
 import org.linphone.settings.SettingsActivity;
 import org.linphone.utils.LinphoneUtils;
 
@@ -73,12 +71,12 @@ public class SideMenuFragment extends Fragment {
                             getResources().getString(R.string.menu_logout),
                             R.drawable.quit_default));
         }
-        if (!getResources().getBoolean(R.bool.hide_assistant_from_side_menu)) {
-            sideMenuItems.add(
-                    new SideMenuItem(
-                            getResources().getString(R.string.menu_assistant),
-                            R.drawable.menu_assistant));
-        }
+        //        if (!getResources().getBoolean(R.bool.hide_assistant_from_side_menu)) {
+        //            sideMenuItems.add(
+        //                    new SideMenuItem(
+        //                            getResources().getString(R.string.menu_assistant),
+        //                            R.drawable.menu_assistant));
+        //        }
         //        if (!getResources().getBoolean(R.bool.hide_settings_from_side_menu)) {
         //            sideMenuItems.add(
         //                    new SideMenuItem(
@@ -207,10 +205,12 @@ public class SideMenuFragment extends Fragment {
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                ((MainActivity) getActivity())
-                                        .showAccountSettings(
-                                                LinphonePreferences.instance()
-                                                        .getDefaultAccountIndex());
+                                //                                ((MainActivity) getActivity())
+                                //                                        .showAccountSettings(
+                                //
+                                // LinphonePreferences.instance()
+                                //
+                                // .getDefaultAccountIndex());
                             }
                         });
             }
@@ -248,8 +248,10 @@ public class SideMenuFragment extends Fragment {
                         public void onItemClick(
                                 AdapterView<?> adapterView, View view, int i, long l) {
                             if (view != null && view.getTag() != null) {
-                                int position = Integer.parseInt(view.getTag().toString());
-                                ((MainActivity) getActivity()).showAccountSettings(position);
+                                //                                int position =
+                                // Integer.parseInt(view.getTag().toString());
+                                //                                ((MainActivity)
+                                // getActivity()).showAccountSettings(position);
                             }
                         }
                     });

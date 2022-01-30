@@ -57,6 +57,7 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_vertical|center_horizontal"
             android:singleLine="true"
+            android:visibility="gone"
             android:paddingBottom="10dp" />
 
         <RelativeLayout
@@ -66,7 +67,7 @@
             android:layout_margin="5dp"
             android:gravity="center">
 
-            <include layout="@layout/contact_avatar_200" />
+            <include layout="@layout/contact_avatar_200" android:visibility="gone" />
 
         </RelativeLayout>
 

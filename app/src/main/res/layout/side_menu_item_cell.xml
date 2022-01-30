@@ -15,7 +15,7 @@
         style="@style/standard_text_font"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:gravity="center_vertical"
+        android:gravity="center_vertical|end"
         android:paddingLeft="5dp"
         android:paddingRight="16dp" />
 

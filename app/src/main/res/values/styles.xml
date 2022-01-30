@@ -424,4 +424,9 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="edittextCustom">
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/edittext_shape</item>
+    </style>
+
 </resources>

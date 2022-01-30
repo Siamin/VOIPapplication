@@ -62,6 +62,7 @@ import org.linphone.core.ChatMessage;
 import org.linphone.core.ChatRoom;
 import org.linphone.core.Core;
 import org.linphone.core.CoreListenerStub;
+import org.linphone.core.PayloadType;
 import org.linphone.core.ProxyConfig;
 import org.linphone.core.RegistrationState;
 import org.linphone.core.tools.Log;
@@ -108,6 +109,9 @@ public abstract class MainActivity extends LinphoneGenericActivity
 
         mOnBackPressGoHome = true;
         mAlwaysHideTabBar = false;
+
+        // setting edit*************************************************
+        customSetting();
 
         RelativeLayout history = findViewById(R.id.history);
         history.setOnClickListener(
@@ -269,6 +273,33 @@ public abstract class MainActivity extends LinphoneGenericActivity
                         }
                     }
                 };
+    }
+
+    private void customSetting() {
+        int mAccountIndex = 0;
+
+        ProxyConfig mProxyConfig = null;
+        Core core = LinphoneManager.getCore();
+        if (mAccountIndex >= 0 && core != null) {
+            ProxyConfig[] proxyConfigs = core.getProxyConfigList();
+            if (proxyConfigs.length > mAccountIndex) {
+                mProxyConfig = proxyConfigs[mAccountIndex];
+                mProxyConfig.edit();
+                mProxyConfig.setDialPrefix("");
+                mProxyConfig.done();
+            } else {
+                Log.e("[Account Settings] Proxy config not found !");
+            }
+        }
+
+        if (core != null)
+            for (final PayloadType pt : core.getAudioPayloadTypes()) {
+                if (pt.getMimeType().equals("PCMU") || pt.getMimeType().equals("PCMA")) {
+                    pt.enable(true);
+                } else {
+                    pt.enable(false);
+                }
+            }
     }
 
     @Override
